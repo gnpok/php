@@ -17,11 +17,9 @@ class Curl
     public function get($url, $data = array())
     {
         if (!empty($data)) {
-            http_build_query($data);
-            $url = $url . '?';
-            foreach ($data as $key => $val) {
-                $url .= '&' . $key . '=' . $val;
-            }
+            $urlData = http_build_query($data);
+            $sign = strpos($url, '?') === false ? '?' : '&';
+            $url = $url . $sign . $urlData;
         }
         $this->init($url);
         $output = curl_exec($this->ch);

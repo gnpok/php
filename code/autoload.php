@@ -1,3 +1,10 @@
+<?php
+
+/**
+ * 自动加载方法
+ * @param  [type] $class [description]
+ * @return [type]        [description]
+ */
 function classLoader($class)
 {
     $path = str_replace('\\', DIRECTORY_SEPARATOR, $class);

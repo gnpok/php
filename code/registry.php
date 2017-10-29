@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * 注册类
+ */
 class Registry
 {
 
